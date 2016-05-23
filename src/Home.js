@@ -216,22 +216,22 @@ var HomeLayer = cc.Layer.extend({
         this.mode = 5;
         this.musicArray = [
             {
-                "name" : "a", 
-                "musicName" : res.s_aiqingmaimai_mp3,
-                "musicBeatMap" : res.s_aiqingmaimai_4k_nm_json,
-                "musicImage" : res.s_aiqingmaimai_png,
+                "name" : "不潮不用花钱-林俊杰", 
+                "musicName" : res.s_buchaobuyaohuaqian_mp3,
+                "musicBeatMap" : res.s_buchaobuyaohuaqian_5k_nm_json,
+                "musicImage" : res.s_buchaobuyaohuaqian_png,
             },
             {
-                "name" : "b", 
-                "musicName" : res.s_andy_mp3, 
-                "musicBeatMap" : res.s_andy_4k_ez_json,
-                "musicImage" : res.s_andy_png,
+                "name" : "曹操-林俊杰", 
+                "musicName" : res.s_caocao_mp3, 
+                "musicBeatMap" : res.s_caocao_5k_nm_json,
+                "musicImage" : res.s_caocao_png,
             },
             {
-                "name" : "c", 
-                "musicName" : res.s_beiduofenbingdu_mp3, 
-                "musicBeatMap" : res.s_beiduofenbingdu_4k_ez_json,
-                "musicImage" : res.s_beiduofenbingdu_png,
+                "name" : "daybyday-T-ara", 
+                "musicName" : res.s_daybyday_mp3, 
+                "musicBeatMap" : res.s_daybyday_5k_nm_json,
+                "musicImage" : res.s_daybyday_png,
             },
         ];
         var items_count = this.listView.getItems().length;
@@ -251,22 +251,22 @@ var HomeLayer = cc.Layer.extend({
         this.mode = 6;
         this.musicArray = [
             {
-                "name" : "a", 
-                "musicName" : res.s_aiqingmaimai_mp3,
-                "musicBeatMap" : res.s_aiqingmaimai_4k_nm_json,
-                "musicImage" : res.s_aiqingmaimai_png,
+                "name" : "彩色的黑-吉克隽逸", 
+                "musicName" : res.s_caisedehei_mp3,
+                "musicBeatMap" : res.s_caisedehei_6k_nm_json,
+                "musicImage" : res.s_caisedehei_png,
             },
             {
-                "name" : "b", 
-                "musicName" : res.s_andy_mp3, 
-                "musicBeatMap" : res.s_andy_4k_ez_json,
-                "musicImage" : res.s_andy_png,
+                "name" : "少女时代", 
+                "musicName" : res.s_shaonvshidai_mp3, 
+                "musicBeatMap" : res.s_shaonvshidai_6k_nm_json,
+                "musicImage" : res.s_shaonvshidai_png,
             },
             {
-                "name" : "c", 
-                "musicName" : res.s_beiduofenbingdu_mp3, 
-                "musicBeatMap" : res.s_beiduofenbingdu_4k_ez_json,
-                "musicImage" : res.s_beiduofenbingdu_png,
+                "name" : "武林盟主-苏醒", 
+                "musicName" : res.s_wulinmengzhu_mp3, 
+                "musicBeatMap" : res.s_wulinmengzhu_6k_nm_json,
+                "musicImage" : res.s_wulinmengzhu_png,
             },
         ];
         var items_count = this.listView.getItems().length;

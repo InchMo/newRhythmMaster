@@ -1,4 +1,4 @@
-var game5KeyLayer = cc.Layer.extend({
+var game6KeyLayer = cc.Layer.extend({
     //层的构造函数 
     ctor:function(musicName, musicBeatMap, musicImage) {
         console.log("this is game5KeyLayer");
@@ -26,7 +26,7 @@ var game5KeyLayer = cc.Layer.extend({
         
         //一些base参数
         var winSize = cc.director.getWinSize();
-        var perKeyW = winSize.width / 10;
+        var perKeyW = winSize.width / 12;
         this.perNoteBottom_X = perKeyW;
         this.speed = 1;
         this.score = 0;
@@ -38,6 +38,7 @@ var game5KeyLayer = cc.Layer.extend({
         this.key3Rect = cc.rect(perKeyW * 4, 0, perKeyW * 2, winSize.height / 2);
         this.key4Rect = cc.rect(perKeyW * 6, 0, perKeyW * 2, winSize.height / 2);
         this.key5Rect = cc.rect(perKeyW * 8, 0, perKeyW * 2, winSize.height / 2);
+        this.key6Rect = cc.rect(perKeyW * 10, 0, perKeyW * 2, winSize.height / 2);
 
         //当前背景图片
         var pSprite = new cc.Sprite(this.musicImage);
@@ -53,30 +54,32 @@ var game5KeyLayer = cc.Layer.extend({
         this.addChild(panlGameSprite, 1);
 
         //rhythm按键槽
-        var panl4KSprite = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("panl_5k.png"));
+        var panl4KSprite = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("panl_6k.png"));
         panl4KSprite.setScale(2);
         panl4KSprite.setPosition(winSize.width/2, 60);
         this.addChild(panl4KSprite, 1);
 
         //note出生位置
         this.bornNotePos0_0 = cc.p(panlGameSprite.x - 50, winSize.height + 30);
-        this.bornNotePos1_0 = cc.p(panlGameSprite.x - 25, winSize.height + 30);
-        this.bornNotePos2_0 = cc.p(panlGameSprite.x + 0, winSize.height + 30);
-        this.bornNotePos3_0 = cc.p(panlGameSprite.x + 25, winSize.height + 30);
-        this.bornNotePos4_0 = cc.p(panlGameSprite.x + 50, winSize.height + 30);
-
+        this.bornNotePos1_0 = cc.p(panlGameSprite.x - 30, winSize.height + 30);
+        this.bornNotePos2_0 = cc.p(panlGameSprite.x - 10, winSize.height + 30);
+        this.bornNotePos3_0 = cc.p(panlGameSprite.x + 10, winSize.height + 30);
+        this.bornNotePos4_0 = cc.p(panlGameSprite.x + 30, winSize.height + 30);
+        this.bornNotePos5_0 = cc.p(panlGameSprite.x + 50, winSize.height + 30);
 
         this.bornNotePos0_1 = cc.p(panlGameSprite.x - 50, winSize.height);
-        this.bornNotePos1_1 = cc.p(panlGameSprite.x - 25, winSize.height);
-        this.bornNotePos2_1 = cc.p(panlGameSprite.x + 0, winSize.height);
-        this.bornNotePos3_1 = cc.p(panlGameSprite.x + 25, winSize.height);
-        this.bornNotePos4_1 = cc.p(panlGameSprite.x + 50, winSize.height);
+        this.bornNotePos1_1 = cc.p(panlGameSprite.x - 30, winSize.height);
+        this.bornNotePos2_1 = cc.p(panlGameSprite.x - 10, winSize.height);
+        this.bornNotePos3_1 = cc.p(panlGameSprite.x + 10, winSize.height);
+        this.bornNotePos4_1 = cc.p(panlGameSprite.x + 30, winSize.height);
+        this.bornNotePos5_1 = cc.p(panlGameSprite.x + 50, winSize.height);
 
         this.bornNotePos0_2 = cc.p(this.perNoteBottom_X * 1 - 50, 0);
-        this.bornNotePos1_2 = cc.p(this.perNoteBottom_X * 3 - 15, 0);
-        this.bornNotePos2_2 = cc.p(this.perNoteBottom_X * 5 + 5, 0);
-        this.bornNotePos3_2 = cc.p(this.perNoteBottom_X * 7 + 35, 0);
-        this.bornNotePos4_2 = cc.p(this.perNoteBottom_X * 9 + 50, 0);
+        this.bornNotePos1_2 = cc.p(this.perNoteBottom_X * 3 - 30, 0);
+        this.bornNotePos2_2 = cc.p(this.perNoteBottom_X * 5 - 5, 0);
+        this.bornNotePos3_2 = cc.p(this.perNoteBottom_X * 7 + 5, 0);
+        this.bornNotePos4_2 = cc.p(this.perNoteBottom_X * 9 + 30, 0);
+        this.bornNotePos5_2 = cc.p(this.perNoteBottom_X * 11 + 50, 0);
 
         //note滑道边缘线
         lSide = cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("b_side.png"));
@@ -85,6 +88,7 @@ var game5KeyLayer = cc.Layer.extend({
         sider_2 = cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("b_sider.png"));
         sider_3 = cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("b_sider.png"));
         sider_4 = cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("b_sider.png"));
+        sider_5 = cc.Sprite.create(cc.spriteFrameCache.getSpriteFrame("b_sider.png"));
 
         lSide.setAnchorPoint(0, 0);
         lSide.setScale(2);
@@ -103,26 +107,32 @@ var game5KeyLayer = cc.Layer.extend({
         sider_2.setAnchorPoint(0.5, 1);
         sider_3.setAnchorPoint(0.5, 1);
         sider_4.setAnchorPoint(0.5, 1);
+        sider_5.setAnchorPoint(0.5, 1);
 
-        sider_1.setScale(1.95);
+        sider_1.setScale(1.98);
         sider_2.setScale(1.8);
-        sider_3.setScale(1.8);
-        sider_4.setScale(1.95);
+        sider_3.setScale(1.75);
+        sider_4.setScale(1.8);
+        sider_5.setScale(1.98);
 
-        sider_1.setRotation(24.5);
-        sider_2.setRotation(8.4);
-        sider_3.setRotation(-8.8);
-        sider_4.setRotation(-24.8);
 
-        sider_1.setPosition(panlGameSprite.x - 40, panlGameSprite.y); 
-        sider_2.setPosition(panlGameSprite.x - 14.4, panlGameSprite.y);
-        sider_3.setPosition(panlGameSprite.x + 14.4 , panlGameSprite.y);   
-        sider_4.setPosition(panlGameSprite.x + 40 , panlGameSprite.y);
+        sider_1.setRotation(26.8);
+        sider_2.setRotation(14.2);
+        sider_3.setRotation(-0.1);
+        sider_4.setRotation(-14.3);
+        sider_5.setRotation(-27);
+
+        sider_1.setPosition(panlGameSprite.x - 45, panlGameSprite.y); 
+        sider_2.setPosition(panlGameSprite.x - 22.2, panlGameSprite.y);
+        sider_3.setPosition(panlGameSprite.x, panlGameSprite.y);   
+        sider_4.setPosition(panlGameSprite.x + 22.2 , panlGameSprite.y);
+        sider_5.setPosition(panlGameSprite.x + 45, panlGameSprite.y);
 
         this.addChild(sider_1, 4);
         this.addChild(sider_2, 4);
         this.addChild(sider_3, 4);
         this.addChild(sider_4, 4);
+        this.addChild(sider_5, 4);
 
         //生命槽
         var top = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("top.png"));
@@ -162,56 +172,67 @@ var game5KeyLayer = cc.Layer.extend({
         this.addChild(pMenu, 1);
 
         //rhythm按键
+        var buttonScale = 1.8;
         this.bottomButton0_1 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_1.png"));
-        this.bottomButton0_1.setPosition(perKeyW + 8, panl4KSprite.y + 20);
-        this.bottomButton0_1.setScale(2);
+        this.bottomButton0_1.setPosition(perKeyW * 1, panl4KSprite.y + 20);
+        this.bottomButton0_1.setScale(buttonScale);
         this.addChild(this.bottomButton0_1, 3);
        
-        this.bottomButton0_2 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_2.png"));
-        this.bottomButton0_2.setPosition(perKeyW * 3 + 3, panl4KSprite.y + 20);
-        this.bottomButton0_2.setScale(2);
+        this.bottomButton0_2 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_1.png"));
+        this.bottomButton0_2.setPosition(perKeyW * 3, panl4KSprite.y + 20);
+        this.bottomButton0_2.setScale(buttonScale);
         this.addChild(this.bottomButton0_2, 3);
         
         this.bottomButton0_3 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_3.png"));
-        this.bottomButton0_3.setPosition(perKeyW * 5 - 3, panl4KSprite.y + 20);
-        this.bottomButton0_3.setScale(2);
+        this.bottomButton0_3.setPosition(perKeyW * 5, panl4KSprite.y + 20);
+        this.bottomButton0_3.setScale(buttonScale);
         this.addChild(this.bottomButton0_3, 3);
 
         this.bottomButton0_4 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_3.png"));
-        this.bottomButton0_4.setPosition(perKeyW * 7 - 5, panl4KSprite.y + 20);
-        this.bottomButton0_4.setScale(2);
+        this.bottomButton0_4.setPosition(perKeyW * 7, panl4KSprite.y + 20);
+        this.bottomButton0_4.setScale(buttonScale);
         this.addChild(this.bottomButton0_4, 3);
 
         this.bottomButton0_5 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_4.png"));
-        this.bottomButton0_5.setPosition(perKeyW * 9 - 10, panl4KSprite.y + 20);
-        this.bottomButton0_5.setScale(2);
+        this.bottomButton0_5.setPosition(perKeyW * 9, panl4KSprite.y + 20);
+        this.bottomButton0_5.setScale(buttonScale);
         this.addChild(this.bottomButton0_5, 3);
+
+        this.bottomButton0_6 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_4.png"));
+        this.bottomButton0_6.setPosition(perKeyW * 11, panl4KSprite.y + 20);
+        this.bottomButton0_6.setScale(buttonScale);
+        this.addChild(this.bottomButton0_6, 3);
 
         //rhythm按键特效
         this.bottomButton1_1 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_1.png"));
-        this.bottomButton1_1.setPosition(perKeyW + 8, panl4KSprite.y + 20);
-        this.bottomButton1_1.setScale(2);
+        this.bottomButton1_1.setPosition(perKeyW * 1, panl4KSprite.y + 20);
+        this.bottomButton1_1.setScale(buttonScale);
         this.addChild(this.bottomButton1_1, -10);
        
-        this.bottomButton1_2 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_2.png"));
-        this.bottomButton1_2.setPosition(perKeyW * 3 + 3, panl4KSprite.y + 20);
-        this.bottomButton1_2.setScale(2);
+        this.bottomButton1_2 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_1.png"));
+        this.bottomButton1_2.setPosition(perKeyW * 3, panl4KSprite.y + 20);
+        this.bottomButton1_2.setScale(buttonScale);
         this.addChild(this.bottomButton1_2, -10);
         
         this.bottomButton1_3 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_3.png"));
-        this.bottomButton1_3.setPosition(perKeyW * 5 - 3, panl4KSprite.y + 20);
-        this.bottomButton1_3.setScale(2);
+        this.bottomButton1_3.setPosition(perKeyW * 5, panl4KSprite.y + 20);
+        this.bottomButton1_3.setScale(buttonScale);
         this.addChild(this.bottomButton1_3, -10);
 
         this.bottomButton1_4 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_3.png"));
-        this.bottomButton1_4.setPosition(perKeyW * 7 - 5, panl4KSprite.y + 20);
-        this.bottomButton1_4.setScale(2);
+        this.bottomButton1_4.setPosition(perKeyW * 7, panl4KSprite.y + 20);
+        this.bottomButton1_4.setScale(buttonScale);
         this.addChild(this.bottomButton1_4, -10);
 
         this.bottomButton1_5 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_4.png"));
-        this.bottomButton1_5.setPosition(perKeyW * 9 - 10, panl4KSprite.y + 20);
-        this.bottomButton1_5.setScale(2);
+        this.bottomButton1_5.setPosition(perKeyW * 9, panl4KSprite.y + 20);
+        this.bottomButton1_5.setScale(buttonScale);
         this.addChild(this.bottomButton1_5, -10);
+
+        this.bottomButton1_6 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_4.png"));
+        this.bottomButton1_6.setPosition(perKeyW * 11, panl4KSprite.y + 20);
+        this.bottomButton1_6.setScale(buttonScale);
+        this.addChild(this.bottomButton1_6, -10);
 
         //comble 连击计数特效 
         var comble = new cc.LabelBMFont("", res.s_Futura);
@@ -263,8 +284,8 @@ var game5KeyLayer = cc.Layer.extend({
         }, this); 
 
         //播放音乐
-        this.startScale = 0.25;
-        this.endScale = 2.5;
+        this.startScale = 0.2;
+        this.endScale = 2;
         this.note = null;
         this.spawn = null;
         this.seq = null;
@@ -272,7 +293,7 @@ var game5KeyLayer = cc.Layer.extend({
         this.nowTime = 0;
         this.baseTimestamp = new Date().getTime();
         cc.audioEngine.playMusic(this.musicName, false);
-        for (; this.rhythmIndex < 15; this.rhythmIndex++){
+        for (; this.rhythmIndex < 18; this.rhythmIndex++){
             this.born();
         }
         return true;
@@ -297,7 +318,7 @@ var game5KeyLayer = cc.Layer.extend({
             onePositon = this.bornNotePos1_0;
             twoPosition = this.bornNotePos1_1;
             threePosition = this.bornNotePos1_2;
-            image = "button_4key_3_2.png";
+            image = "button_4key_3_1.png";
             addSore = 2;
         }
         else if (this.rhythm[this.rhythmIndex].p == 2){
@@ -314,12 +335,19 @@ var game5KeyLayer = cc.Layer.extend({
             image = "button_4key_3_3.png";
             addSore = 4;
         }
-        else{
+        else if (this.rhythm[this.rhythmIndex].p == 4){
             onePositon = this.bornNotePos4_0;
             twoPosition = this.bornNotePos4_1;
             threePosition = this.bornNotePos4_2;
             image = "button_4key_3_4.png";
             addSore = 5;
+        }
+        else{
+            onePositon = this.bornNotePos5_0;
+            twoPosition = this.bornNotePos5_1;
+            threePosition = this.bornNotePos5_2;
+            image = "button_4key_3_4.png";
+            addSore = 6;
         }
         this.note = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame(image));
         this.note.setPosition(onePositon);
@@ -386,7 +414,7 @@ var game5KeyLayer = cc.Layer.extend({
         scene.getChildByTag(2).removeFromParent(true);
         scene.getChildByTag(3).removeFromParent(true);
         this.removeFromParent(true);
-        var layer = new game5KeyLayer(musicName, musicBeatMap, musicImage);
+        var layer = new game6KeyLayer(musicName, musicBeatMap, musicImage);
         scene.addChild(layer);
     },
 
@@ -410,7 +438,7 @@ var game5KeyLayer = cc.Layer.extend({
         var seq = cc.Sequence.create(cc.ScaleTo.create(0.2, 2.5), cc.CallFunc.create(this.s_pCallback, this, miss));
         miss.runAction(seq);
         
-        this.life = this.life - 2.5;
+        this.life = this.life - 5;
         this.lifeBar.runAction(cc.ProgressTo.create(0.1, this.life));
         if(this.life <= -5){
             cc.audioEngine.playEffect(res.s_YouLose,false);
@@ -464,6 +492,9 @@ var game5KeyLayer = cc.Layer.extend({
         }
         if (cc.rectContainsPoint(this.key5Rect, touch)) {
             return 5;
+        }
+        if (cc.rectContainsPoint(this.key6Rect, touch)) {
+            return 6;
         }
         return 0;
     },
@@ -626,6 +657,10 @@ var game5KeyLayer = cc.Layer.extend({
                 target.zOrderSprite(target.bottomButton0_5,target.bottomButton1_5);
                 target.showCombo(target.checkScore(target.getChildByTag(5)));
                 break;
+            case 6:
+                target.zOrderSprite(target.bottomButton0_6,target.bottomButton1_6);
+                target.showCombo(target.checkScore(target.getChildByTag(6)));
+                break;
             default:
                 break;
         }
@@ -653,6 +688,9 @@ var game5KeyLayer = cc.Layer.extend({
                 break;
             case 5:
                 target.zOrderSprite(target.bottomButton1_5,target.bottomButton0_5);
+                break;
+            case 6:
+                target.zOrderSprite(target.bottomButton1_6,target.bottomButton0_6);
                 break;
             default:
                 break;
@@ -687,6 +725,10 @@ var game5KeyLayer = cc.Layer.extend({
                 target.zOrderSprite(target.bottomButton0_5,target.bottomButton1_5);
                 target.showCombo(target.checkScore(target.getChildByTag(5)));
                 break;
+            case 76:
+                target.zOrderSprite(target.bottomButton0_6,target.bottomButton1_6);
+                target.showCombo(target.checkScore(target.getChildByTag(6)));
+                break;
             default:
                 break;
         }
@@ -710,6 +752,9 @@ var game5KeyLayer = cc.Layer.extend({
             case 75:
                 target.zOrderSprite(target.bottomButton1_5,target.bottomButton0_5);
                 break;
+            case 76:
+                target.zOrderSprite(target.bottomButton1_6,target.bottomButton0_6);
+                break;
             default:
                 break;
         }
@@ -718,10 +763,10 @@ var game5KeyLayer = cc.Layer.extend({
 });
 
 //创建一个新场景
-var Game5KeyScene = cc.Scene.extend({   
+var Game6KeyScene = cc.Scene.extend({   
     onEnter:function () {
         this._super();
-        var layer = new game5KeyLayer(this.musicName, this.musicBeatMap, this.musicImage);
+        var layer = new game6KeyLayer(this.musicName, this.musicBeatMap, this.musicImage);
         this.addChild(layer, 1, 1);
     },
     layerPause:function(target){

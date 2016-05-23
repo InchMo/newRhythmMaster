@@ -32,6 +32,32 @@ var res = {
 	s_beiduofenbingdu_4k_ez_json : "res/song/beiduofenbingdu_4k_ez.json",
 	s_beiduofenbingdu_png : "res/song/beiduofenbingdu.png",
 
+
+	s_buchaobuyaohuaqian_mp3 : "res/song/buchaobuyaohuaqian.mp3",
+	s_buchaobuyaohuaqian_5k_nm_json : "res/song/buchaobuyaohuaqian_5k_nm.json",
+	s_buchaobuyaohuaqian_png : "res/song/buchaobuyaohuaqian.png",
+
+	s_caocao_mp3 : "res/song/caocao.mp3",
+	s_caocao_5k_nm_json : "res/song/caocao_5k_nm.json",
+	s_caocao_png : "res/song/caocao.png",
+
+	s_daybyday_mp3 : "res/song/daybyday.mp3",
+	s_daybyday_5k_nm_json : "res/song/daybyday_5k_nm.json",
+	s_daybyday_png : "res/song/daybyday.png",
+
+
+	s_caisedehei_mp3 : "res/song/caisedehei.mp3",
+	s_caisedehei_6k_nm_json : "res/song/caisedehei_6k_nm.json",
+	s_caisedehei_png : "res/song/caisedehei.png",
+
+	s_shaonvshidai_mp3 : "res/song/shaonvshidai.mp3",
+	s_shaonvshidai_6k_nm_json : "res/song/shaonvshidai_6k_nm.json",
+	s_shaonvshidai_png : "res/song/shaonvshidai.png",
+
+	s_wulinmengzhu_mp3 : "res/song/wulinmengzhu.mp3",
+	s_wulinmengzhu_6k_nm_json : "res/song/wulinmengzhu_6k_nm.json",
+	s_wulinmengzhu_png : "res/song/wulinmengzhu.png",
+
 };
 
 var g_resources = [];

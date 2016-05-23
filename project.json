@@ -15,6 +15,7 @@
         "src/resource.js",
         "src/Home.js",
         "src/Game4Key.js",
-        "src/Game5Key.js"
+        "src/Game5Key.js",
+        "src/Game6Key.js"
     ]
 }

@@ -161,7 +161,7 @@ var game4KeyLayer = cc.Layer.extend({
         this.addChild(this.bottomButton0_3, 3);
 
         this.bottomButton0_4 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_0_4.png"));
-        this.bottomButton0_4.setPosition(perKeyW * 7 - 15, panl4KSprite.y + 20);
+        this.bottomButton0_4.setPosition(perKeyW * 7 - 10, panl4KSprite.y + 20);
         this.bottomButton0_4.setScale(2.5);
         this.addChild(this.bottomButton0_4, 3);
 
@@ -182,7 +182,7 @@ var game4KeyLayer = cc.Layer.extend({
         this.addChild(this.bottomButton1_3, -10);
 
         this.bottomButton1_4 = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("button_4key_1_4.png"));
-        this.bottomButton1_4.setPosition(perKeyW * 7 - 15, panl4KSprite.y + 20);
+        this.bottomButton1_4.setPosition(perKeyW * 7 - 10, panl4KSprite.y + 20);
         this.bottomButton1_4.setScale(2.5);
         this.addChild(this.bottomButton1_4, -10);
 
