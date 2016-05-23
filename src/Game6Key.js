@@ -438,7 +438,7 @@ var game6KeyLayer = cc.Layer.extend({
         var seq = cc.Sequence.create(cc.ScaleTo.create(0.2, 2.5), cc.CallFunc.create(this.s_pCallback, this, miss));
         miss.runAction(seq);
         
-        this.life = this.life - 5;
+        this.life = this.life - 1;
         this.lifeBar.runAction(cc.ProgressTo.create(0.1, this.life));
         if(this.life <= -5){
             cc.audioEngine.playEffect(res.s_YouLose,false);
