@@ -27,13 +27,6 @@ var HomeLayer = cc.Layer.extend({
         gameLogo.setPosition(winSize.width / 2 , winSize.height - 80);
         this.addChild(gameLogo, 1);
 
-        /*
-        var m_emitter = cc.ParticleFireworks.create();
-        m_emitter.initWithTotalParticles(10);
-        m_emitter.retain();
-        m_emitter.setPosition(winSize.width/2, winSize.height/2);
-        pSprite.addChild(m_emitter, 10);
-        */
 
         //设置游戏模式选项
         var key4SpriteButton = new cc.Sprite(cc.spriteFrameCache.getSpriteFrame("key_button_4.png"));
@@ -178,6 +171,8 @@ var HomeLayer = cc.Layer.extend({
     {
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("4Key模式");
+        this.label4.setString("无");
+        this.musicName == null；
         this.mode = 4;
         this.musicArray = [
             {
@@ -213,6 +208,8 @@ var HomeLayer = cc.Layer.extend({
     {
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("5Key模式");
+        this.label4.setString("无");
+        this.musicName == null；
         this.mode = 5;
         this.musicArray = [
             {
@@ -248,6 +245,8 @@ var HomeLayer = cc.Layer.extend({
     {
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("6Key模式");
+        this.label4.setString("无");
+        this.musicName == null；
         this.mode = 6;
         this.musicArray = [
             {
