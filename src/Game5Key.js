@@ -1,7 +1,6 @@
 var game5KeyLayer = cc.Layer.extend({
     //层的构造函数 
     ctor:function(musicName, musicBeatMap, musicImage) {
-        console.log("this is game5KeyLayer");
         // body...
         this._super();
         this.bornFlag = true;
