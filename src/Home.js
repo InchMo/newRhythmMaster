@@ -172,7 +172,7 @@ var HomeLayer = cc.Layer.extend({
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("4Key模式");
         this.label4.setString("无");
-        this.musicName == null；
+        this.musicName = null；
         this.mode = 4;
         this.musicArray = [
             {
@@ -209,7 +209,7 @@ var HomeLayer = cc.Layer.extend({
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("5Key模式");
         this.label4.setString("无");
-        this.musicName == null；
+        this.musicName = null；
         this.mode = 5;
         this.musicArray = [
             {
@@ -246,7 +246,7 @@ var HomeLayer = cc.Layer.extend({
         cc.audioEngine.playEffect(res.s_ModeSelect02,false);
         this.label2.setString("6Key模式");
         this.label4.setString("无");
-        this.musicName == null；
+        this.musicName = null；
         this.mode = 6;
         this.musicArray = [
             {
